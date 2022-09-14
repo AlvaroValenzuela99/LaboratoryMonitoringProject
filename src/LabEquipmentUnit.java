@@ -1,11 +1,11 @@
 public class LabEquipmentUnit {
     //Variables
-    private String name;
-    private static String unit;
-    private static int amount;
-    private static double costPerUnit;
-    private String currency;
-    private String notes;
+    protected static String name;
+    protected static String unit;
+    protected static int amount;
+    protected static double costPerUnit;
+    protected static String currency;
+    protected static String notes;
 
     //Constructors
     public LabEquipmentUnit(String name, String unit, int amount, double costPerUnit, String currency, String notes) {
@@ -72,7 +72,7 @@ public class LabEquipmentUnit {
     }
 
     //Prepares and then returns information about equipment unit (like in the example: Screws | 1000 pcs. | EUR 15.60 | Size of the screw is 4.2x76mm).
-    public static void gatherPrintableInfo(String name, int amount, String currency, String notes){
+    public static void gatherPrintableInfo(){
         System.out.println(name + " | " + amount + " " + unit + " | " + currency + " " + calculateValueOfAllUnits() + " | " + notes);
     }
 

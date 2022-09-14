@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class LabRoom {
 
     //Variables
-    private String name;
-    private String openingHour;
-    private String closingHour;
-    private ArrayList<LabEquipmentUnit> equipments = new ArrayList<>();
+    protected String name;
+    protected String openingHour;
+    protected String closingHour;
+    protected ArrayList<LabEquipmentUnit> equipments = new ArrayList<>();
 
     //Constructors
     public LabRoom(String name, String openingHour, String closingHour, ArrayList<LabEquipmentUnit> equipments) {
@@ -17,9 +17,18 @@ public class LabRoom {
         this.equipments = equipments;
     }
 
+    public LabRoom(String name, String openingHour, String closingHour) {
+        this.name = name;
+        this.openingHour = openingHour;
+        this.closingHour = closingHour;
+    }
+
     //Requires the user to enter each value of LabEquipmentUnit class's attribute, then uses LabEquipmentUnit class's initialization constructor to create a new object and add the new object to the equipment list.
-    public void addRoomEquipment(String newName, String newUnit, int newAmount, double newCostPerUnit, String newCurrency, String newNotes){
+    public void addRoomEquipment(){
         Scanner scanner = new Scanner(System.in);
+        String newName, newUnit, newCurrency, newNotes;
+        int newAmount;
+        double newCostPerUnit;
 
         System.out.println("Please enter the name of the equipment:");
         newName = scanner.nextLine();
@@ -46,7 +55,7 @@ public class LabRoom {
     }
 
     //Prints a formatted message containing all necessary information. May call a LabEquipmentUnit object's method gatherPrintableInfo.
-    public void printInfo(String name, int amount, String currency, String notes){
-        LabEquipmentUnit.gatherPrintableInfo(name, amount, currency, notes);
+    public void printInfo(){
+        LabEquipmentUnit.gatherPrintableInfo();
     }
 }

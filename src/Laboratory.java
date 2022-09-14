@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Laboratory {
-
+    static ArrayList<LabRoom> labRooms = new ArrayList<>();
     //Main method
     public static void main(String[] args) {
-        //Variables
-        ArrayList<LabRoom> labRooms = new ArrayList<>();
-
-        welcomeScreen();
+        labRooms.add(new LabRoom("Laser Cutting", "11:00", "18:00"));
+        labRooms.add(new LabRoom("hab 2", "11:00", "18:00"));
+        labRooms.add(new LabRoom("hab 3", "11:00", "18:00"));
+        labRooms.add(new LabRoom("Molding and Casting lab", "11:00", "17:00"));
+        addEquipment();
     }
     //To print the welcome message - the list of options that user can select to view lab room information, add a lab room or add more equipment;
-    public static void welcomeScreen(){
+    public void welcomeScreen(){
         Scanner scanner = new Scanner(System.in);
         int firstOption;
         String secondOption;
@@ -29,19 +30,16 @@ public class Laboratory {
         if (firstOption == 1){
             System.out.println("\nSelect a laboratory room to view:");
 
-            welcomeScreen();
         }
 
         //If user chooses to add a lab room
         else if (firstOption == 2){
-            System.out.println("\nEnter the name of the laboratory room:");
+            System.out.println("Enter the name of the laboratory room:");
             secondOption = scanner.nextLine();
-
             System.out.println("Enter the opening hour:");
             openingHour = scanner.nextLine();
             System.out.println("Enter the closing hour");
             closingHour = scanner.nextLine();
-            welcomeScreen();
         }
 
         //If user chooses to add more equipment
@@ -49,17 +47,16 @@ public class Laboratory {
             System.out.println("\nSelect a laboratory room:");
             thirdOption = scanner.nextInt();
 
-            welcomeScreen();
         }
 
         //If user chooses an invalid option
         else {
             System.out.println("PLEASE ENTER A VALID OPTION!");
-            welcomeScreen();
         }
+        welcomeScreen();
     }
 
-    //At first it prints all names of labRooms list, then after the user will select one of the listed lab rooms, more detailed room information gets printed by calling LabRoom class's method printInfo;
+    //At first, it prints all names of labRooms list, then after the user will select one of the listed lab rooms, more detailed room information gets printed by calling LabRoom class's method printInfo;
     public void printRoomInfo(){
 
     }
@@ -70,7 +67,17 @@ public class Laboratory {
     }
 
     //First a numbered list of all available LabRoom objects gets printed. After the user selects the room to which equipment will be added, the addRoomEquipment method for the selected object may be called. Calls the welcomeScreen method after new equipment has been added.
-    public void addEquipment(){
+    public static void addEquipment(){
+        int i = 1;
+        Scanner scanner = new Scanner(System.in);
+        int optionChosen;
 
+        System.out.println("Select a laboratory room:\n");
+        for (LabRoom l : labRooms) {
+            System.out.println(i + ". " + l.name);
+            i++;
+        }
+        optionChosen = scanner.nextInt();
+        labRooms.get(optionChosen-1).addRoomEquipment();
     }
 }
