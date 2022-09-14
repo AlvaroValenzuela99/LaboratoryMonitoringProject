@@ -38,8 +38,13 @@ public class LabRoom {
     }
     //Returns the sum of all equipment list's objects calculateValueOfAllUnits method's return values. (Call calculateValueOfAllUnits for each element in the equipment list and sum the returned values).
     public double calculateEquipmentCosts(){
-
+        double sum = 0;
+        for (LabEquipmentUnit equipment : equipments) {
+            return sum += equipment.calculateValueOfAllUnits();
+        }
+        return sum;
     }
+
     //Prints a formatted message containing all necessary information. May call a LabEquipmentUnit object's method gatherPrintableInfo.
     public void printInfo(String name, int amount, String currency, String notes){
         LabEquipmentUnit.gatherPrintableInfo(name, amount, currency, notes);
