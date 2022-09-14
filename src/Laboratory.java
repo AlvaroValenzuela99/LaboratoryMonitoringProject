@@ -1,13 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Laboratory {
 
     //Main method
     public static void main(String[] args) {
         //Variables
-        String[] labRooms;
+        ArrayList<LabRoom> labRooms = new ArrayList<>();
 
         welcomeScreen();
-
     }
     //To print the welcome message - the list of options that user can select to view lab room information, add a lab room or add more equipment;
     public static void welcomeScreen(){

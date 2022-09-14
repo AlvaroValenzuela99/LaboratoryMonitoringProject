@@ -70,6 +70,7 @@ public class LabEquipmentUnit {
     public double calculateValueOfAllUnits(){
         return amount * costPerUnit;
     }
+
     //Prepares and then returns information about equipment unit (like in the example: Screws | 1000 pcs. | EUR 15.60 | Size of the screw is 4.2x76mm).
     public void gatherPrintableInfo(){
         System.out.println(name + " | " + amount + " " + unit + " | " + currency + " " + calculateValueOfAllUnits() + " | " + notes);
