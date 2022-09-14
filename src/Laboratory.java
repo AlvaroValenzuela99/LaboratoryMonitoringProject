@@ -2,14 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Laboratory {
     static ArrayList<LabRoom> labRooms = new ArrayList<>();
+    static ArrayList<LabEquipmentUnit> equipments = new ArrayList<>();
     //Main method
     public static void main(String[] args) {
-        labRooms.add(new LabRoom("Laser Cutting", "11:00", "18:00"));
-        labRooms.add(new LabRoom("hab 2", "11:00", "18:00"));
-        labRooms.add(new LabRoom("hab 3", "11:00", "18:00"));
-        labRooms.add(new LabRoom("Molding and Casting lab", "11:00", "17:00"));
-        addEquipment();
+        LabEquipmentUnit tornillos = new LabEquipmentUnit("tornillos", "pcs.", 200, 0.10, "EUR", "afilados");
+        equipments.add(tornillos);
     }
+
     //To print the welcome message - the list of options that user can select to view lab room information, add a lab room or add more equipment;
     public void welcomeScreen(){
         Scanner scanner = new Scanner(System.in);

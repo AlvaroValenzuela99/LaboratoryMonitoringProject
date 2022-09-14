@@ -10,12 +10,6 @@ public class LabRoom {
     protected ArrayList<LabEquipmentUnit> equipments = new ArrayList<>();
 
     //Constructors
-    public LabRoom(String name, String openingHour, String closingHour, ArrayList<LabEquipmentUnit> equipments) {
-        this.name = name;
-        this.openingHour = openingHour;
-        this.closingHour = closingHour;
-        this.equipments = equipments;
-    }
 
     public LabRoom(String name, String openingHour, String closingHour) {
         this.name = name;
@@ -56,6 +50,9 @@ public class LabRoom {
 
     //Prints a formatted message containing all necessary information. May call a LabEquipmentUnit object's method gatherPrintableInfo.
     public void printInfo(){
+        System.out.println(name);
+        System.out.println(openingHour + " - " + closingHour);
         LabEquipmentUnit.gatherPrintableInfo();
+        System.out.println("Total value of " + name + ": " + calculateEquipmentCosts());
     }
 }

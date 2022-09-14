@@ -16,6 +16,14 @@ public class LabEquipmentUnit {
         this.currency = currency;
         this.notes = notes;
     }
+    //Constructor without notes
+    public LabEquipmentUnit(String name, String unit, int amount, double costPerUnit, String currency) {
+        this.name = name;
+        this.unit = unit;
+        this.amount = amount;
+        this.costPerUnit = costPerUnit;
+        this.currency = currency;
+    }
 
     //Getters and setters
     public String getName() {
