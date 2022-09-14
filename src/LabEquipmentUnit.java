@@ -1,9 +1,9 @@
 public class LabEquipmentUnit {
     //Variables
     private String name;
-    private String unit;
-    private int amount;
-    private double costPerUnit;
+    private static String unit;
+    private static int amount;
+    private static double costPerUnit;
     private String currency;
     private String notes;
 
@@ -67,12 +67,12 @@ public class LabEquipmentUnit {
     }
 
     //Calculates the cost of all units by multiplying amount of the equipment unit with cost per unit
-    public double calculateValueOfAllUnits(){
+    public static double calculateValueOfAllUnits(){
         return amount * costPerUnit;
     }
 
     //Prepares and then returns information about equipment unit (like in the example: Screws | 1000 pcs. | EUR 15.60 | Size of the screw is 4.2x76mm).
-    public void gatherPrintableInfo(){
+    public static void gatherPrintableInfo(String name, int amount, String currency, String notes){
         System.out.println(name + " | " + amount + " " + unit + " | " + currency + " " + calculateValueOfAllUnits() + " | " + notes);
     }
 

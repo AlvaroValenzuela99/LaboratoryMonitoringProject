@@ -41,7 +41,7 @@ public class LabRoom {
 
     }
     //Prints a formatted message containing all necessary information. May call a LabEquipmentUnit object's method gatherPrintableInfo.
-    public void printInfo(){
-
+    public void printInfo(String name, int amount, String currency, String notes){
+        LabEquipmentUnit.gatherPrintableInfo(name, amount, currency, notes);
     }
 }
