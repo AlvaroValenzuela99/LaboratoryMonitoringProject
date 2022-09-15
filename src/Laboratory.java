@@ -4,6 +4,7 @@ public class Laboratory {
     static ArrayList<LabRoom> labRooms = new ArrayList<>();
     //Main method
     public static void main(String[] args) {
+        labRooms.add(new LabRoom("sala", "0:00", "12:00"));
         welcomeScreen();
     }
 

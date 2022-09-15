@@ -29,9 +29,9 @@ public class LabRoom {
         System.out.println("\nPlease enter the unit:");
         newUnit = scanner.nextLine();
         System.out.println("\nPlease enter the amount of the units:");
-        newAmount = scanner.nextInt();
+        newAmount = Integer.parseInt(scanner.nextLine());
         System.out.println("\nPlease enter the cost per unit:");
-        newCostPerUnit = scanner.nextDouble();
+        newCostPerUnit = Double.parseDouble(scanner.nextLine());
         System.out.println("\nPlease enter the currency:");
         newCurrency = scanner.nextLine();
         System.out.println("\nPlease enter some notes about the equipment:");
