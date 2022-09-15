@@ -4,7 +4,7 @@ public class Laboratory {
     static ArrayList<LabRoom> labRooms = new ArrayList<>();
     //Main method
     public static void main(String[] args) {
-        labRooms.add(new LabRoom("sala", "0:00", "12:00"));
+        labRooms.add(new LabRoom("example room", "8:00", "12:00"));
         welcomeScreen();
     }
 
@@ -67,7 +67,7 @@ public class Laboratory {
         //A list of all the rooms appears
         System.out.println("Select a laboratory room to view:\n");
         for (LabRoom l : labRooms) {
-            System.out.println(i + ". " + l.name);
+            System.out.println(i + ". " + l.getName());
             i++;
         }
 

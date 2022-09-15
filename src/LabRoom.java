@@ -17,8 +17,32 @@ public class LabRoom {
         this.closingHour = closingHour;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOpeningHour() {
+        return openingHour;
+    }
+
+    public void setOpeningHour(String openingHour) {
+        this.openingHour = openingHour;
+    }
+
+    public String getClosingHour() {
+        return closingHour;
+    }
+
+    public void setClosingHour(String closingHour) {
+        this.closingHour = closingHour;
+    }
+
     //Requires the user to enter each value of LabEquipmentUnit class's attribute, then uses LabEquipmentUnit class's initialization constructor to create a new object and add the new object to the equipment list.
-    public void addRoomEquipment(){
+    public void addRoomEquipment() {
         Scanner scanner = new Scanner(System.in);
         String newName, newUnit, newCurrency, newNotes;
         int newAmount;
@@ -39,20 +63,25 @@ public class LabRoom {
 
         equipments.add(new LabEquipmentUnit(newName, newUnit, newAmount, newCostPerUnit, newCurrency, newNotes));
     }
+
     //Returns the sum of all equipment list's objects calculateValueOfAllUnits method's return values. (Call calculateValueOfAllUnits for each element in the equipment list and sum the returned values).
-    public double calculateEquipmentCosts(){
+    public double calculateEquipmentCosts() {
         double sum = 0;
         for (LabEquipmentUnit equipment : equipments) {
-            return sum += equipment.calculateValueOfAllUnits();
+            sum += equipment.calculateValueOfAllUnits();
         }
         return sum;
     }
 
     //Prints a formatted message containing all necessary information. May call a LabEquipmentUnit object's method gatherPrintableInfo.
-    public void printInfo(){
+    public void printInfo() {
         System.out.println(name);
         System.out.println(openingHour + " - " + closingHour);
-        LabEquipmentUnit.gatherPrintableInfo();
+
+        //foreach to show all the equipments of the room
+        for (LabEquipmentUnit e : equipments) {
+            e.gatherPrintableInfo();
+        }
         System.out.println("Total value of " + name + ": " + calculateEquipmentCosts());
     }
 }
