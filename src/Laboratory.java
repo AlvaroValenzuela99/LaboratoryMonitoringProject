@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Laboratory {
     static ArrayList<LabRoom> labRooms = new ArrayList<>();
+
     //Main method
     public static void main(String[] args) {
         labRooms.add(new LabRoom("example room", "8:00", "12:00"));
@@ -12,10 +13,6 @@ public class Laboratory {
     public static void welcomeScreen(){
         Scanner scanner = new Scanner(System.in);
         int firstOption;
-        String secondOption;
-        String openingHour;
-        String closingHour;
-        int thirdOption;
 
         System.out.println("Welcome to the Laboratory Monitoring!");
         System.out.println("\n1. View lab room information");
@@ -90,7 +87,7 @@ public class Laboratory {
         newClosingHour = scanner.nextLine();
 
         //A new LabRoom object is created with the inputs
-        labRooms.add(new LabRoom(newName, newOpeningHour, newOpeningHour));
+        labRooms.add(new LabRoom(newName, newOpeningHour, newClosingHour));
         System.out.println("New lab room added successfully!");
     }
 
@@ -103,14 +100,13 @@ public class Laboratory {
         //A list of all the rooms appears
         System.out.println("Select a laboratory room:\n");
         for (LabRoom l : labRooms) {
-            System.out.println(i + ". " + l.name);
+            System.out.println(i + ". " + l.getName());
             i++;
         }
 
         //The user has to choose one of them to add the equipment
         optionChosen = scanner.nextInt();
         labRooms.get(optionChosen-1).addRoomEquipment();
-
-        welcomeScreen();
+        System.out.println("New equipment added successfully!");
     }
 }
