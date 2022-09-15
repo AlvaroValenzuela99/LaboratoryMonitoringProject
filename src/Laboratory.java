@@ -84,9 +84,9 @@ public class Laboratory {
         String newName, newOpeningHour, newClosingHour;
         System.out.println("Please enter the name of the laboratory room:");
         newName = scanner.nextLine();
-        System.out.println("Please enter the opening hour:");
+        System.out.println("Please enter the opening hour (HH:mm):");
         newOpeningHour = scanner.nextLine();
-        System.out.println("Please enter the closing hour:");
+        System.out.println("Please enter the closing hour (HH:mm):");
         newClosingHour = scanner.nextLine();
 
         //A new LabRoom object is created with the inputs

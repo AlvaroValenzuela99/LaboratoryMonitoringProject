@@ -82,6 +82,6 @@ public class LabRoom {
         for (LabEquipmentUnit e : equipments) {
             e.gatherPrintableInfo();
         }
-        System.out.println("Total value of " + name + ": " + calculateEquipmentCosts());
+        System.out.println("Total value of " + name + " equipment: " + calculateEquipmentCosts());
     }
 }
