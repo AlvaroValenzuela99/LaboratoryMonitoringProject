@@ -18,6 +18,7 @@ public class Laboratory {
         System.out.println("\n1. View lab room information");
         System.out.println("2. Add a lab room");
         System.out.println("3. Add more equipment");
+        System.out.println("4. Close the program");
         System.out.print(("\nType the option here: "));
         firstOption = scanner.nextInt();
 
@@ -47,7 +48,9 @@ public class Laboratory {
             new Scanner(System.in).nextLine();
             welcomeScreen();
         }
-
+        else if (firstOption == 4){
+            return;
+        }
         //If user chooses an invalid option
         else {
             System.out.println("PLEASE ENTER A VALID OPTION!");
